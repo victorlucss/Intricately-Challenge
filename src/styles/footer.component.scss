@@ -1,0 +1,71 @@
+@import '_colors.scss';
+
+footer {
+  background: $white;
+  color: $darkgray;
+  height: 135px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  
+  .align-items-footer{
+    width: 90%;
+  }
+  
+  
+  .links {
+    display: flex;
+    justify-content: space-between;
+    
+    ul {
+      color: $slategray;
+      display: flex;
+
+      li {
+        &:not(:last-child){
+          &:after {
+            content: '|';
+            color: $slategray;
+            margin: 0 10px;
+          }
+        }
+
+        a {
+          color: $slategray;
+          margin: 0;
+    
+          &:hover {
+            color: $slategray - 20;
+          }
+        }
+      }
+    }
+  }
+
+  .copyright-social {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 30px;
+
+    .social {
+      .icon {
+        width: 42px;
+        height: 42px;
+        display: inline-block;
+
+        &:not(:first-child) {
+          margin-left: 10px;
+        }
+        
+        &.facebook { background: url('../assets/facebook.png'); }
+        &.linkedin { background: url('../assets/linkedin.png'); }
+        &.twitter { background: url('../assets/twitter.png'); }
+      }
+
+    }
+
+  }
+
+}
