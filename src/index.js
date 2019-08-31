@@ -1,8 +1,16 @@
-import 'Styles/main.scss';
 import Vue from 'vue';
-import HelloWorld from 'Components/HelloWorld.vue';
+import 'Styles/intricately.scss';
+
+import { NavbarIntricately } from './components'
+
+Vue.component('navbar-intricately', NavbarIntricately);
+
+import App from './App.vue'
+
+import router from 'Router'
 
 new Vue({
-  render: createElement => createElement(HelloWorld),
-  el: '#app'
+  render: createElement => createElement(App),
+  el: '#app',
+  router,
 });
