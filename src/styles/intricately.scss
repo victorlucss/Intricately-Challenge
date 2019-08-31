@@ -9,11 +9,15 @@
 
 
 body {
-  background: #e7e9f3;
+  background: $lavender;
   font: $font;
 }
 
 input, button, textarea {
   outline: none;
   border: 0;
+}
+
+a {
+  text-decoration: none;
 }
