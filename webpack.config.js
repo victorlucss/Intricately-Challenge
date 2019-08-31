@@ -27,7 +27,7 @@ module.exports = {
       Components: path.resolve(__dirname, 'src', 'components'),
       Directives: path.resolve(__dirname, 'src', 'directives'),
       Filters: path.resolve(__dirname, 'src', 'filters'),
-      Images: path.resolve(__dirname, 'src', 'images'),
+      Assets: path.resolve(__dirname, 'src', 'assets'),
       Styles: path.resolve(__dirname, 'src', 'styles'),
       Plugins: path.resolve(__dirname, 'src', 'plugins'),
       Mixins: path.resolve(__dirname, 'src', 'mixins')
@@ -110,8 +110,8 @@ module.exports = {
     }),
     new CopyWebpackPlugin([
       {
-        from: 'src/images',
-        to: 'assets/images'
+        from: 'src/assets',
+        to: 'assets/'
       },
     ]),
   ]
