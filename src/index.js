@@ -1,9 +1,10 @@
 import Vue from 'vue';
 import 'Styles/intricately.scss';
 
-import { NavbarIntricately } from './components'
+import { NavbarIntricately, FooterIntricately } from './components'
 
 Vue.component('navbar-intricately', NavbarIntricately);
+Vue.component('footer-intricately', FooterIntricately);
 
 import App from './App.vue'
 
