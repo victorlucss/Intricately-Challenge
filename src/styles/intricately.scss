@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans:400,500&display=swap');
+
+@import '_colors.scss';
+@import '_components.scss';
+@import '_reset.scss';
+@import '_transitions.scss';
+@import '_variables.scss';
+
+
+
+body {
+  background: #e7e9f3;
+  font: $font;
+}
+
+input, button, textarea {
+  outline: none;
+  border: 0;
+}
