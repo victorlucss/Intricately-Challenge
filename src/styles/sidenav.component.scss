@@ -1,6 +1,16 @@
 @import './_colors.scss';
 @import './_variables.scss';
 
+@mixin selectedSidenav(){
+  content: '';
+  width: 4px;
+  height: calc(100% + 2px);
+  background: $darkslateblue;
+  position: absolute;
+  left: -1px;
+  top: -1px;
+}
+
 ul.sidenav {
   width: 300px;
   margin-left: 10px;
@@ -10,21 +20,36 @@ ul.sidenav {
 
     &.active {
       color: $dimgray;
+
+      &:last-child {
+        li {
+          &:before {
+            @include selectedSidenav();
+            border-radius: 0 0 0 $defaultradius;
+          }
+        }
+      }
+
+      &:first-child {
+        li {
+          &:before {
+            @include selectedSidenav();
+            border-radius: $defaultradius 0 0 0;
+          }
+        }
+      }
+
+      &:not(:first-child), &:not(:last-child) {
+        li {
+          &:before {
+            @include selectedSidenav();
+          }
+        }
+      }
       
       li {
         background: $ghostwhite;
         position: relative;
-
-        &:before {
-          content: '';
-          width: 4px;
-          height: calc(100% + 2px);
-          background: $darkslateblue;
-          position: absolute;
-          left: -1px;
-          top: -1px;
-          border-radius: $defaultradius 0 0 0;
-        }
       }
     }
 
