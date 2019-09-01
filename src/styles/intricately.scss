@@ -26,9 +26,18 @@ a {
   min-height: 100%;
   
   .content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
     width: 90%;
     margin: 0 auto;
     padding: 20px;
     padding-bottom: 135px;
   }
+}
+
+.page-content {
+  flex-basis: 77%;
 }
