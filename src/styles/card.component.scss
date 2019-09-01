@@ -1,0 +1,18 @@
+@import './_colors.scss';
+@import './_variables.scss';
+
+.card {
+  background: $white;
+  border-radius: $defaultradius;
+  border: 1px solid $gainsboro;
+
+  .title {
+    padding: 20px 15px;
+    border-bottom: 1px solid $gainsboro;
+    text-transform: uppercase;
+    color: $darkslategray;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+
+  }
+}
