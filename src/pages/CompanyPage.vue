@@ -1,20 +1,5 @@
 <template>
-  <div class="container">
-    <navbar-intricately></navbar-intricately>
-
-    <div class="content">
-      <sidenav-intricately>
-        <sidenavlink-intricately link="/" id="0">Company data</sidenavlink-intricately>
-        <sidenavlink-intricately link="/" id="1">Company table</sidenavlink-intricately>
-        <sidenavlink-intricately link="/" id="2">Company page</sidenavlink-intricately>
-      </sidenav-intricately>
-    </div>
-
-    <footer-intricately></footer-intricately>
+  <div>
+    At microsoft our mission is to empower every person and every organization on the planet to achieve more. Our mission is grounded in both the world in which we live and the future we strive to create. View more.
   </div>
 </template>
-
-<script>
-  export default {
-  }
-</script>
