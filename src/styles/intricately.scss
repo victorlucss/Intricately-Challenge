@@ -21,3 +21,14 @@ input, button, textarea {
 a {
   text-decoration: none;
 }
+
+.container {
+  min-height: 100%;
+  
+  .content {
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+    padding-bottom: 135px;
+  }
+}
