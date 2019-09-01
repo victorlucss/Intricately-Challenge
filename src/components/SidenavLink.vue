@@ -1,5 +1,5 @@
 <template>
-  <a href="#" :class="{'active': id == selectedSidenav}" @click="changeSelectedSidenav">
+  <a :class="{'active': id == selectedSidenav}" @click="changeSelectedSidenav">
     <li>
       <slot></slot>
     </li>
@@ -26,7 +26,11 @@
     },
 
     methods: {
-      changeSelectedSidenav(){        
+      changeSelectedSidenav(){      
+        if (this.$route.path != this.link){
+          this.$router.push(this.linkRouter)  
+        }
+        
         this.$store.dispatch('sidenav/setSelectedSidenav', this.id);
       }
     },
