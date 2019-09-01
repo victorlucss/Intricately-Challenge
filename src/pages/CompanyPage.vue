@@ -117,7 +117,11 @@
           </div>
         </card-intricately>
 
-        <card-intricately title="Company spend history"></card-intricately>
+        <card-intricately title="Company spend history">
+
+          <graphic-intricately></graphic-intricately>
+
+        </card-intricately>
 
         <card-intricately title="Company spend history">
 
