@@ -1,0 +1,83 @@
+@import './colors.scss';
+@import './variables.scss';
+
+input.input[type='number'] {
+  -moz-appearance:textfield;
+}
+
+input.input[type=number]::-webkit-inner-spin-button,
+input.input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.input-group {
+  position: relative;
+  padding-top: 25px;
+  padding-bottom: 10px;
+  min-width: 35%;
+  width: 35%;
+
+  &.is-fullwidth {
+    width: 100%;
+  }
+
+  &.has-error {    
+    .input {
+      border-color: $lightred;
+      color: $lightred;
+
+      &::placeholder {
+        color: $lightred;
+      }
+
+      &:focus {
+        border-color: $lightred - 10;
+        color: $lightred - 10;
+      }
+    }
+
+    span.label {
+      color: $lightred;
+    }
+  }
+
+  .input {
+    font: $font;
+    padding: 12px 15px;
+    border-radius: $defaultradius;
+    border: 1px solid $lightbluegray;
+    box-shadow: 0 0 5px 1px $whitesmoke - 10;
+    color: $lightbluegray;
+    font-size: 14px;
+    width: calc(100% - 30px);
+
+    &::placeholder {
+      color: $lightbluegray;
+    }
+
+    &:focus {
+      border-color: $lightbluegray - 10;
+      box-shadow: 0 0 5px 1px $whitesmoke - 15;
+      color: $lightbluegray - 30;
+    }
+  }
+
+  span.label {
+    position: absolute;
+    left: 0;
+    top: 3px;
+    color: $darkgray;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  span.error {
+    font-size: 10px;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    color: $lightred;
+  }
+
+}
