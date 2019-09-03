@@ -15,7 +15,6 @@
 
     data() {
       return {
-        inputValue: this.value || '',
         minValue: parseInt(this.min),
         maxValue: parseInt(this.max),
         error: {
@@ -25,16 +24,18 @@
       }
     },
 
-    watch: {
-      value(val){
-        if(this.type !== 'currency'){
-          this.inputValue = value;
-        }else this.inputValue = parseInt(value)
-      },
+    computed: {
+      inputValue: {
+        get(){
+          return this.value || '';
+        },
 
-      inputValue(val){
-        this.validate();
-      },
+        set(val){
+          this.validate();
+          console.log('oie')
+          this.$emit('input', val);
+        }
+      }
     },
 
     methods: {
