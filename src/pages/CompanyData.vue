@@ -7,11 +7,7 @@
     <card-intricately id="companyData">
       <div class="wrapper">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique pretium cursus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec quis est eu dui consequat aliquam.
-        
 
-
-        <br />
-        TESTANDO ->> {{modalOpened}}
         <input-intricately type="text"  required="true" label="Company name" placeholder="e.g. Your company name" />
         <input-intricately type="currency" min="150" required="true" label="Company spend" placeholder="e.g. $150,000" />
         <input-intricately type="currency" min="150" max="330" required="true" label="Company spend ability" placeholder="e.g. $150,000 - $330,000" />
