@@ -1,0 +1,121 @@
+@import './_colors.scss';
+@import './_variables.scss';
+
+nav {
+  background: $darkslateblue;
+  min-height: 70px;
+  max-height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: $white;
+
+  .nav-header {
+    display: flex;
+    align-items: center;
+    margin-left: 25px;
+
+      .logo {
+        width: 40px;
+        height: 40px;
+        background: url('../assets/logo-pink.png');
+      }
+    
+      .search-box {
+        position: relative;
+        margin-left: 25px;
+    
+        .icon {
+          background: url('../assets/search.png');
+          width: 32px;
+          height: 32px;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          left: 10px;
+        }
+        
+        input {
+          background: $midightblue;
+          padding: 15px;
+          padding-left: 45px;      
+          color: $ghostwhite;
+          border-radius: $defaultradius;
+          min-width: 250px;
+
+          ::placeholder {
+            color: $white;
+          }
+        }
+      }
+    
+      .divider {
+        margin: 0 15px;
+    
+      }
+    
+      button.smarlist-button {
+        background: $slategray;
+        padding: 15px 25px;
+        text-transform: uppercase;
+        color: $white;
+        border-radius: $defaultradius;
+        cursor: pointer;
+        
+        &:hover {
+          background: $slategray + 10;
+        }
+      }
+    
+      ul.menu {
+        display: flex;
+        text-transform: uppercase;
+        margin-left: 35px;
+    
+        li {
+          cursor: pointer;
+
+          &:not(:first-child) {
+            margin-left: 20px;
+          }
+        }
+    
+      }
+
+  }
+
+  .nav-user {
+    display: flex;
+    flex-direction: row;
+    margin-right: 25px;
+
+    .user {
+      &:last-child {
+        margin-left: 15px;
+      }
+      img {
+        width: 30px;
+        height: 30px;
+      }
+    }
+
+  }
+
+  .has-dropdown {
+    position: relative;
+    padding-right: 25px;
+
+    &:after {
+      content: '';
+      background: url('../assets/arrow-down.png') center center;
+      width: 12px;
+      height: 7px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 5px;
+    }
+  }
+
+
+}

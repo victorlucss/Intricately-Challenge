@@ -1,0 +1,84 @@
+@import './_colors.scss';
+@import './_variables.scss';
+
+@mixin selectedSidenav(){
+  content: '';
+  width: 4px;
+  height: calc(100% + 2px);
+  background: $darkslateblue;
+  position: absolute;
+  left: -1px;
+  top: -1px;
+}
+
+ul.sidenav {
+  flex-basis: 15%;
+  margin-left: 10px;
+
+  a {
+    color: $slategray;
+
+    &.active {
+      color: $dimgray;
+
+      &:last-child {
+        li {
+          &:before {
+            @include selectedSidenav();
+            border-radius: 0 0 0 $defaultradius;
+          }
+        }
+      }
+
+      &:first-child {
+        li {
+          &:before {
+            @include selectedSidenav();
+            border-radius: $defaultradius 0 0 0;
+          }
+        }
+      }
+
+      &:not(:first-child), &:not(:last-child) {
+        li {
+          &:before {
+            @include selectedSidenav();
+          }
+        }
+      }
+      
+      li {
+        background: $ghostwhite;
+        position: relative;
+      }
+    }
+
+    li {
+      width: 100%;
+      background: $white;
+      padding: 20px 20px;
+      border-left: 1px solid $gainsboro;
+      border-right: 1px solid $gainsboro;
+      border-top: 1px solid $gainsboro;
+      text-transform: uppercase;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      
+    }
+
+    &:first-child {
+      li {
+        border-radius: $defaultradius $defaultradius 0 0;
+      }
+    }
+
+    &:last-child {
+      li {
+        border-bottom: 1px solid $gainsboro;
+        border-radius: 0 0 $defaultradius $defaultradius;
+      }
+    }
+  }
+  
+
+}

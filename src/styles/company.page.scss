@@ -1,0 +1,173 @@
+@import './_colors.scss';
+@import './_variables.scss';
+
+@mixin badge($size, $badge-size){
+  background: $white;
+  box-shadow:  0px 3px 5px 0px $lightgray;
+  width: $size;
+  height: $size;
+  border-radius: $defaultradius;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: $badge-size;
+    height: $badge-size;
+  }
+}
+
+.company-info {
+  display: flex; 
+  align-items: center;
+
+  .badge {  
+    @include badge(80px, 50px);
+  }
+
+  .info {
+    margin-left: 20px; 
+
+    h1 {
+      font-size: 26px;
+      font-weight: 500;
+      margin-bottom: 5px;
+    }
+
+    span.location {
+      padding: 0 0 0 15px;
+      color: $dimgray;
+      position: relative;
+
+      &:before {
+        content: '';
+        background: url('../assets/location.png');
+        width: 9px;
+        height: 14px;
+        position: absolute;
+        left: 0px;
+      }
+    }
+
+  }
+}
+
+.company-description {
+  margin: 20px 0;
+  
+  a {
+    text-decoration: underline;
+    color: $slategray;
+  }
+}
+
+/*
+  DETAIL:
+  The company has a particular grid system (see the layoout), so I decided to put this in that way
+  of implementation (using .row class)
+*/
+
+.column {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  .row {
+    flex: calc(50% - 20px);
+    margin: 0 10px;
+    
+    .card {
+      margin-bottom: 20px;
+    }
+
+    &:first-child{
+      margin-left: 0px;
+    }
+  }
+}
+
+.activities {
+  ul {
+    display: block;
+
+    li {
+      //TODO: Divide the itens inner li in rows, because can have number of days that doesn't has two digits
+      width: calc(100% - 20px);
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      text-align: justify;
+      color: $dimgray;
+
+      &:not(:last-child) {
+        border-bottom: 1px solid $gainsboro;
+      }
+
+      .time {
+        color: $silver;
+        font-size: 12px;
+        font-weight: 500;
+      }
+
+      .icon {
+        width: 24px;
+        min-width: 24px;
+        margin: 0 10px 0 15px;
+        height: 24px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        
+        &.performance-monitoring { background: url('../assets/performance-monitoring.png'); }
+        &.content-delivery { background: url('../assets/content-delivery.png'); }
+        &.dns { background: url('../assets/dns.png'); }
+        &.saas { background: url('../assets/saas.png'); }
+        &.traffic-management { background: url('../assets/traffic-management.png'); }
+        &.video-platform { background: url('../assets/video-platform.png'); }
+        &.waf-d-dos-security { background: url('../assets/waf-d-dos-security.png'); }
+      }
+
+      .description {
+        a {
+          color: $slategray;
+        }
+
+        del {
+          color: $darkgray;
+        }
+      }
+
+      
+    }
+  }
+}
+
+.company-info-card {
+  margin: 20px;
+  display: flex;
+  
+  .company-info-badge {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .badge {
+      @include badge(50px, 45px);
+    }
+  
+    .info {
+      font-size: 18px;
+      margin-left: 10px;
+
+      a {
+        color: $slategray;
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      span {
+        color: $darkslategray;
+      }
+    }
+    
+  }
+}

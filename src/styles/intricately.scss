@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans:400,500&display=swap');
+
+@import '_colors.scss';
+@import '_components.scss';
+@import '_pages.scss';
+@import '_reset.scss';
+@import '_transitions.scss';
+@import '_variables.scss';
+
+
+
+body {
+  background: $lavender;
+  font: $font;
+}
+
+input, button, textarea {
+  outline: none;
+  border: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  min-height: 100%;
+  
+  .content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+    padding-bottom: 135px;
+  }
+}
+
+.page-content {
+  flex-basis: 77%;
+}
