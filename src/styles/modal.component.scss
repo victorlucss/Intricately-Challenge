@@ -1,0 +1,80 @@
+@import './colors.scss';
+@import './variables.scss';
+
+@mixin close-icon-bar($color, $rotate) {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  left: 10px;
+  transform: rotate($rotate);
+  border-radius: $defaultradius;
+  background: $color;
+}
+
+.modal {
+  .modal-overlay {
+    background: $overlayblack;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 888;
+    width: 100%;
+    height: 100%;
+  }
+
+  .modal-container {
+    background: $white;
+    border-radius: $defaultradius;
+    padding: 20px;
+    position: fixed;
+    z-index: 999;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 40%;
+    box-shadow: 0 4px 5px 0 ($overlayblack + 30);
+
+    .title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      h2 {
+        text-transform: uppercase;
+        color: $darkgray;
+      }
+
+      .close {
+        position: relative;
+        width: 15px;
+        height: 15px;
+        
+        cursor: pointer;
+
+        &:before {
+          @include close-icon-bar($lavender, 45deg);
+        }
+
+        &:after {
+          @include close-icon-bar($lavender, -45deg);
+        }
+
+        &:hover {
+          &:before {
+            @include close-icon-bar($lavender - 20, 45deg);
+          }
+  
+          &:after {
+            @include close-icon-bar($lavender - 20, -45deg);
+          }
+        }
+
+      }
+    }
+
+    .modal-content {
+      
+    }
+  }
+}
